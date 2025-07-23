@@ -62,36 +62,36 @@
                       </h5>
 
                       <div class="mb-3">
-                        <label>Nombre</label>
+                        <label class="label-custom">Nombre</label>
                         <input formControlName="nombre" class="form-control" />
                       </div>
 
                       <div class="mb-3">
-                        <label>Raza</label>
+                        <label class="label-custom">Raza</label>
                         <input formControlName="raza" class="form-control" />
                       </div>
 
                       <div class="row">
                         <div class="col-md-6 mb-3">
-                          <label>Tipo</label>
+                          <label class="label-custom">Tipo</label>
                           <input formControlName="tipo" class="form-control" />
                         </div>
                         <div class="col-md-6 mb-3">
-                          <label>Color</label>
+                          <label class="label-custom">Color</label>
                           <input formControlName="color" class="form-control" />
                         </div>
                       </div>
 
                       <div class="row">
                         <div class="col-md-6 mb-3">
-                          <label>Sexo</label>
+                          <label class="label-custom">Sexo</label>
                           <select formControlName="sexo" class="form-control">
                             <option value="Macho">Macho</option>
                             <option value="Hembra">Hembra</option>
                           </select>
                         </div>
                         <div class="col-md-6 mb-3">
-                          <label>Edad</label>
+                          <label class="label-custom">Edad</label>
                           <input
                             formControlName="edad"
                             class="form-control"
@@ -114,7 +114,7 @@
                       src="./assets/img/propietario2.jpeg"
                       class="img-fluid rounded-start"
                       alt="..."
-                      style="height: 378.98px; width: 238.66px;"
+                      style="height: 378.98px; width: 238.66px"
                     />
                   </div>
                   <div class="col-md-8">
@@ -134,46 +134,65 @@
                         >
                           2
                         </span>
-                        <span class="flex-grow-1 text-center"
-                          >Información del propietario</span
-                        >
+                        <span class="flex-grow-1 text-center">
+                          Información del propietario
+                        </span>
                       </h5>
 
                       <div class="mb-3">
-                        <label>Nombre</label>
-                        <input formControlName="nombre" class="form-control" />
-                      </div>
-
-                      <div class="mb-3">
-                        <label>Raza</label>
-                        <input formControlName="raza" class="form-control" />
-                      </div>
-
-                      <div class="row">
-                        <div class="col-md-6 mb-3">
-                          <label>Tipo</label>
-                          <input formControlName="tipo" class="form-control" />
-                        </div>
-                        <div class="col-md-6 mb-3">
-                          <label>Color</label>
-                          <input formControlName="color" class="form-control" />
-                        </div>
+                        <label class="label-custom">Nombre completo</label>
+                        <input
+                          formControlName="nombreCompleto"
+                          class="form-control"
+                        />
                       </div>
 
                       <div class="row">
                         <div class="col-md-6 mb-3">
-                          <label>Sexo</label>
-                          <select formControlName="sexo" class="form-control">
-                            <option value="Macho">Macho</option>
-                            <option value="Hembra">Hembra</option>
+                          <label class="label-custom">Tipo de documento</label>
+                          <select
+                            formControlName="tipoDocumento"
+                            class="form-control"
+                          >
+                            <option value="CC">Cédula de Ciudadanía</option>
+                            <option value="TI">Tarjeta de Identidad</option>
+                            <option value="NIT">NIT</option>
+                            <option value="PP">Pasaporte</option>
                           </select>
                         </div>
                         <div class="col-md-6 mb-3">
-                          <label>Edad</label>
+                          <label class="label-custom"
+                            >Número de documento</label
+                          >
                           <input
-                            formControlName="edad"
+                            formControlName="numeroDocumento"
                             class="form-control"
-                            type="number"
+                          />
+                        </div>
+                      </div>
+
+                      <div class="mb-3">
+                        <label class="label-custom">Dirección</label>
+                        <input
+                          formControlName="direccion"
+                          class="form-control"
+                        />
+                      </div>
+
+                      <div class="row">
+                        <div class="col-md-6 mb-3">
+                          <label class="label-custom">Teléfono</label>
+                          <input
+                            formControlName="telefono"
+                            class="form-control"
+                          />
+                        </div>
+                        <div class="col-md-6 mb-3">
+                          <label class="label-custom">Correo</label>
+                          <input
+                            formControlName="correo"
+                            type="email"
+                            class="form-control"
                           />
                         </div>
                       </div>
@@ -185,76 +204,96 @@
 
             <!-- Paso 3: Información de diagnóstico inicial -->
             <div *ngSwitchCase="3">
-              <div class="card" style="max-width: 760px">
-                <div class="row g-0">
-                  <div class="col-md-4">
-                    <img
-                      src="./assets/img/perro5.webp"
-                      class="img-fluid rounded-start"
-                      alt="..."
+              <div class="card mx-auto" style="max-width: 760px">
+                <div class="card-body">
+                  <h5
+                    class="card-title text-white text-center p-2 d-flex justify-content-between align-items-center"
+                    style="background-color: #233791"
+                  >
+                    <span
+                      class="badge text-bg-light d-inline-flex justify-content-center align-items-center ms-2"
+                      style="
+                        border-radius: 50%;
+                        width: 20px;
+                        height: 20px;
+                        font-size: 0.7rem;
+                      "
+                    >
+                      3
+                    </span>
+                    <span class="flex-grow-1 text-center">
+                      Información de diagnóstico inicial
+                    </span>
+                  </h5>
+
+                  <div class="mb-3">
+                    <label class="label-custom">Motivo de consulta</label>
+                    <input
+                      formControlName="motivoConsulta"
+                      class="form-control"
                     />
                   </div>
-                  <div class="col-md-8">
-                    <div class="card-body">
-                      <h5
-                        class="card-title text-white text-center p-2 d-flex justify-content-between align-items-center"
-                        style="background-color: #233791"
-                      >
-                        <span
-                          class="badge text-bg-light d-inline-flex justify-content-center align-items-center ms-2"
-                          style="
-                            border-radius: 50%;
-                            width: 20px;
-                            height: 20px;
-                            font-size: 0.7rem;
-                          "
-                        >
-                          3
-                        </span>
-                        <span class="flex-grow-1 text-center"
-                          >Información de diagnóstico inicial</span
-                        >
-                      </h5>
 
-                      <div class="mb-3">
-                        <label>Nombre</label>
-                        <input formControlName="nombre" class="form-control" />
-                      </div>
+                  <div class="mb-3">
+                    <label class="label-custom">Síntomas actuales</label>
+                    <textarea
+                      formControlName="sintomas"
+                      rows="3"
+                      class="form-control"
+                    ></textarea>
+                  </div>
 
-                      <div class="mb-3">
-                        <label>Raza</label>
-                        <input formControlName="raza" class="form-control" />
-                      </div>
+                  <div class="mb-3">
+                    <label class="label-custom">Tiempo de evolución</label>
+                    <input
+                      formControlName="tiempoEvolucion"
+                      class="form-control"
+                      placeholder="Ej. 2 días, 1 semana"
+                    />
+                  </div>
 
-                      <div class="row">
-                        <div class="col-md-6 mb-3">
-                          <label>Tipo</label>
-                          <input formControlName="tipo" class="form-control" />
-                        </div>
-                        <div class="col-md-6 mb-3">
-                          <label>Color</label>
-                          <input formControlName="color" class="form-control" />
-                        </div>
-                      </div>
+                  <div class="mb-3">
+                    <label class="label-custom">Alimentación</label>
+                    <input
+                      formControlName="alimentacion"
+                      class="form-control"
+                      placeholder="Ej. concentrado, comida casera, mixto"
+                    />
+                  </div>
 
-                      <div class="row">
-                        <div class="col-md-6 mb-3">
-                          <label>Sexo</label>
-                          <select formControlName="sexo" class="form-control">
-                            <option value="Macho">Macho</option>
-                            <option value="Hembra">Hembra</option>
-                          </select>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                          <label>Edad</label>
-                          <input
-                            formControlName="edad"
-                            class="form-control"
-                            type="number"
-                          />
-                        </div>
-                      </div>
+                  <div class="row">
+                    <div class="col-md-6 mb-3">
+                      <label class="label-custom">¿Vacunación al día?</label>
+                      <select formControlName="vacunacion" class="form-control">
+                        <option value="">Seleccione</option>
+                        <option value="Si">Sí</option>
+                        <option value="No">No</option>
+                      </select>
                     </div>
+                    <div class="col-md-6 mb-3">
+                      <label class="label-custom"
+                        >¿Desparasitado recientemente?</label
+                      >
+                      <select
+                        formControlName="desparasitacion"
+                        class="form-control"
+                      >
+                        <option value="">Seleccione</option>
+                        <option value="Si">Sí</option>
+                        <option value="No">No</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label class="label-custom"
+                      >Observaciones adicionales</label
+                    >
+                    <textarea
+                      formControlName="observaciones"
+                      rows="3"
+                      class="form-control"
+                    ></textarea>
                   </div>
                 </div>
               </div>

@@ -6,7 +6,8 @@ import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } 
   selector: 'app-add-pet-modal',
   standalone: true,
   imports: [CommonModule, FormsModule, ReactiveFormsModule],
-  templateUrl: './add-pet-modal.component.html'
+  templateUrl: './add-pet-modal.component.html',
+  styleUrl: './add-pet-modal.component.css'
 })
 export class AddPetModalComponent implements OnInit {
   petForm!: FormGroup;
