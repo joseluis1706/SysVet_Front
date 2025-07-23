@@ -45,7 +45,7 @@
 }
 
 .card {
-  height: 750px;
+  height: auto;
   /* background-image: url('/assets/img/perro6.jpg'); */
   background-repeat: no-repeat;
   background-position: center;
