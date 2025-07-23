@@ -1,0 +1,83 @@
+/* .card {
+    max-width: 600px;
+    width: 90%;
+  }
+   */
+   .forgot-password-link {
+    color: rgb(214, 212, 212); 
+    text-decoration: none; 
+  }
+  
+  .forgot-password-link:hover {
+    text-decoration: underline;
+    color: rgb(12, 13, 99);
+  }
+  .login-container .custom-btn {    
+    padding: 12px 24px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  /* Redondear los campos de entrada */
+input.form-control {
+  border-radius: 30px; 
+}
+
+.logo-img {
+  width: 150px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.text-danger {
+  width: 200px;
+}
+
+/* Redondear el botón de "Sign in" */
+.custom-btn {
+  border-radius: 30px;
+}
+.custom-card {
+  background-color: #242633; 
+  color: white; 
+  border-radius: 10px; 
+  border: 2px solid #eafcfb; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+/* Cuadro de texto debajo de los errores */
+.custom-error-box {
+  display: block; 
+  width: 275px; 
+  background-color: rgba(136, 172, 212, 0.87);
+  color: #111111; 
+  padding: 5px; 
+  border-radius: 5px; 
+  font-size: 14px;
+  text-align: left;
+  font-weight: bold;
+  margin-top: 4px;
+  margin-left: 15px;
+}
+
+.custom-welcome {
+  color: white;
+}
+
+.notification-container {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  width: auto; 
+  background-color: transparent;
+  border-radius: 5px;
+  z-index: 1000;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px; 
+}
+.notification-container:hover {
+  color: white
+}

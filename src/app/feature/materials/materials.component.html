@@ -1,0 +1,166 @@
+<!-- Contenedor flotante (derecha) -->
+<div class="notification-container">
+  <ng-container *ngFor="let notification of notifications; let i = index">
+    <app-notifications
+      *ngIf="notification.container === 0 && notification.visible"
+      [title]="notification.title"
+      [type]="notification.type"
+      [alertType]="notification.alertType"
+      (close)="removeNotification(i)"
+    ></app-notifications>
+  </ng-container>
+</div>
+
+<!-- Contenedor superior (todo el ancho) -->
+<div>
+  <ng-container *ngFor="let notification of notifications; let i = index">
+    <app-notifications
+      *ngIf="notification.container === 1 && notification.visible"
+      [title]="notification.title"
+      [type]="notification.type"
+      [alertType]="notification.alertType"
+      (close)="removeNotification(i)"
+    ></app-notifications>
+  </ng-container>
+</div>
+
+<div class="title-container">
+  <a href="/materials" class="title-link">
+    <svg viewBox="0 0 16 16">
+      <use xlink:href="./assets/icons/bootstrap-icons.svg#boxes" />
+    </svg>
+    /Materials
+  </a>
+</div>
+<div class="card shadow m-3">
+  <div class="card-body">
+    <div class="d-flex align-items-center w-100">
+      <!-- Botón para mostrar/ocultar la cinta -->
+      <button
+        class="btn btn-sm btn-outline-dark mb-3"
+        (click)="showOptions = !showOptions"
+      >
+        <svg
+          fill="currentColor"
+          viewBox="0 0 16 16"
+          width="16"
+          height="16"
+          style="vertical-align: middle"
+        >
+          <use
+            [attr.xlink:href]="
+              './assets/icons/bootstrap-icons.svg#' +
+              (showOptions ? 'chevron-right' : 'chevron-left')
+            "
+          ></use>
+        </svg>
+        <span class="ms-1">{{ showOptions ? "Hide" : "Show" }} Options</span>
+      </button>
+      <div class="w-100 d-flex justify-content-end pe-4">
+        <h5 class="card-title title-right">
+          <span class="title-text">
+            <span class="text-muted">Management of</span>
+            <span class="text-primary fw-bold">MATERIALS</span>
+            <span class="orange-dot"></span>
+          </span>
+        </h5>
+      </div>
+    </div>
+
+    <div class="d-flex">
+      <div class="flex-grow-1 p-3">
+        <!-- Tabla -->
+        <div class="table-responsive mt-3">
+          <table class="table custom-table small">
+            <thead>
+              <tr>
+                <th class="text-center">Item</th>
+                <th class="text-center">Name</th>
+                <th class="text-center d-none d-xl-table-cell">Description</th>
+                <th class="text-center d-none d-xl-table-cell">Quantity</th>
+                <th class="text-center d-none d-xl-table-cell">Price</th>
+                <th class="text-center d-none d-xl-table-cell">MinStock</th>
+                <th class="text-center d-none d-xl-table-cell">MaxStock</th>
+                <th class="text-center">Measurement unit</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="text-center">
+                  <input type="checkbox" class="item-checkbox" />
+                </td>
+                <td class="text-start">WOOD</td>
+                <td class="text-start d-none d-xl-table-cell">
+                  High quality oak wood
+                </td>
+                <td class="text-center d-none d-xl-table-cell">150</td>
+                <td class="text-center d-none d-xl-table-cell">$25.00</td>
+                <td class="text-center d-none d-xl-table-cell">50</td>
+                <td class="text-center d-none d-xl-table-cell">300</td>
+                <td class="text-center">kg</td>
+              </tr>
+              <tr>
+                <td class="text-center">
+                  <input type="checkbox" class="item-checkbox" />
+                </td>
+                <td class="text-start">STEEL</td>
+                <td class="text-start d-none d-xl-table-cell">
+                  Industrial-grade steel rods
+                </td>
+                <td class="text-center d-none d-xl-table-cell">80</td>
+                <td class="text-center d-none d-xl-table-cell">$45.50</td>
+                <td class="text-center d-none d-xl-table-cell">20</td>
+                <td class="text-center d-none d-xl-table-cell">200</td>
+                <td class="text-center">units</td>
+              </tr>
+              <tr>
+                <td class="text-center">
+                  <input type="checkbox" class="item-checkbox" />
+                </td>
+                <td class="text-start">PAINT</td>
+                <td class="text-start d-none d-xl-table-cell">
+                  White matte wall paint
+                </td>
+                <td class="text-center d-none d-xl-table-cell">230</td>
+                <td class="text-center d-none d-xl-table-cell">$12.75</td>
+                <td class="text-center d-none d-xl-table-cell">30</td>
+                <td class="text-center d-none d-xl-table-cell">500</td>
+                <td class="text-center">liters</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      
+      <div
+        class="options-panel p-3 border-start"
+        [ngClass]="{ 'd-none': !showOptions }"
+      >
+        <div class="d-flex flex-column align-items-center gap-3 mt-3">
+          <button class="icon-only-btn" title="Add">
+            <svg fill="#ff6a00" viewBox="0 0 16 16" class="option-icon">
+              <use
+                xlink:href="./assets/icons/bootstrap-icons.svg#plus-circle"
+              />
+            </svg>
+          </button>
+
+          <button class="icon-only-btn" title="Edit">
+            <svg fill="#ff6a00" viewBox="0 0 16 16" class="option-icon">
+              <use
+                xlink:href="./assets/icons/bootstrap-icons.svg#pencil-square"
+              />
+            </svg>
+          </button>
+
+          <button class="icon-only-btn" title="Delete">
+            <svg fill="#ff6a00" viewBox="0 0 16 16" class="option-icon">
+              <use xlink:href="./assets/icons/bootstrap-icons.svg#trash" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

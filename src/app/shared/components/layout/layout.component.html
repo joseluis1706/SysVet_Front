@@ -1,0 +1,29 @@
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<div class="container-fluid p-0">
+  <div class="row m-0"> 
+    <!-- Sidebar -->
+    <div id="sidebar" class="p-0" 
+         [ngClass]="{'hidden': !isSidebarVisible}"  
+         style="width: 100px; background-color: var(--sidebar-background-color); height: 100vh; border-right: 2px solid black; overflow: hidden;">     
+      <app-sidebar [optionsMenu]="optionsMenu"></app-sidebar>
+    </div>
+
+    <!-- Main Content -->
+    <div [ngClass]="{'full-width': !isSidebarVisible, 'reduced-width': isSidebarVisible}" 
+         class="main-content d-flex flex-column p-0" style="height: 100vh; overflow: hidden;">
+      
+      <!-- Header with Toggle Button -->
+      <app-header (sidebarToggle)="toggleSidebar()"></app-header>
+      
+      <!-- Content -->
+      <div class="router-outlet-container flex-grow-1" style="overflow-y: auto; background-color: rgba(218, 218, 221, 0.8);">
+        <router-outlet></router-outlet>        
+      </div>
+      
+      <!-- Footer -->
+      <div class="col-12 p-0">
+        <app-footer></app-footer>
+      </div>
+    </div>
+  </div>
+</div>

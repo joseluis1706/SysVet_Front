@@ -1,0 +1,296 @@
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="addPetModal"
+  tabindex="-1"
+  aria-labelledby="addPetModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title fw-bold" id="addPetModalLabel">
+          Agregar Nueva Mascota
+        </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+        ></button>
+      </div>
+
+      <form [formGroup]="petForm" (ngSubmit)="onSubmit()">
+        <div
+          class="modal-body"
+          style="
+            border-top: 1px solid rgb(184, 205, 252);
+            border-bottom: 2px solid rgb(184, 205, 252);
+          "
+        >
+          <div [ngSwitch]="step">
+            <!-- Paso 1: Información general de la mascota -->
+            <div *ngSwitchCase="1">
+              <div class="card" style="max-width: 760px">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img
+                      src="./assets/img/perro5.webp"
+                      class="img-fluid rounded-start"
+                      alt="..."
+                    />
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5
+                        class="card-title text-white text-center p-2 d-flex justify-content-between align-items-center"
+                        style="background-color: #233791"
+                      >
+                        <span
+                          class="badge text-bg-light d-inline-flex justify-content-center align-items-center ms-2"
+                          style="
+                            border-radius: 50%;
+                            width: 20px;
+                            height: 20px;
+                            font-size: 0.7rem;
+                          "
+                        >
+                          1
+                        </span>
+                        <span class="flex-grow-1 text-center"
+                          >Información general de la Mascota</span
+                        >
+                      </h5>
+
+                      <div class="mb-3">
+                        <label>Nombre</label>
+                        <input formControlName="nombre" class="form-control" />
+                      </div>
+
+                      <div class="mb-3">
+                        <label>Raza</label>
+                        <input formControlName="raza" class="form-control" />
+                      </div>
+
+                      <div class="row">
+                        <div class="col-md-6 mb-3">
+                          <label>Tipo</label>
+                          <input formControlName="tipo" class="form-control" />
+                        </div>
+                        <div class="col-md-6 mb-3">
+                          <label>Color</label>
+                          <input formControlName="color" class="form-control" />
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-md-6 mb-3">
+                          <label>Sexo</label>
+                          <select formControlName="sexo" class="form-control">
+                            <option value="Macho">Macho</option>
+                            <option value="Hembra">Hembra</option>
+                          </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                          <label>Edad</label>
+                          <input
+                            formControlName="edad"
+                            class="form-control"
+                            type="number"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Paso 2: Información del propietario -->
+            <div *ngSwitchCase="2">
+              <div class="card mb-3" style="max-width: 760px">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img
+                      src="./assets/img/propietario2.jpeg"
+                      class="img-fluid rounded-start"
+                      alt="..."
+                      style="height: 378.98px; width: 238.66px;"
+                    />
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5
+                        class="card-title text-white text-center p-2 d-flex justify-content-between align-items-center"
+                        style="background-color: #233791"
+                      >
+                        <span
+                          class="badge text-bg-light d-inline-flex justify-content-center align-items-center ms-2"
+                          style="
+                            border-radius: 50%;
+                            width: 20px;
+                            height: 20px;
+                            font-size: 0.7rem;
+                          "
+                        >
+                          2
+                        </span>
+                        <span class="flex-grow-1 text-center"
+                          >Información del propietario</span
+                        >
+                      </h5>
+
+                      <div class="mb-3">
+                        <label>Nombre</label>
+                        <input formControlName="nombre" class="form-control" />
+                      </div>
+
+                      <div class="mb-3">
+                        <label>Raza</label>
+                        <input formControlName="raza" class="form-control" />
+                      </div>
+
+                      <div class="row">
+                        <div class="col-md-6 mb-3">
+                          <label>Tipo</label>
+                          <input formControlName="tipo" class="form-control" />
+                        </div>
+                        <div class="col-md-6 mb-3">
+                          <label>Color</label>
+                          <input formControlName="color" class="form-control" />
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-md-6 mb-3">
+                          <label>Sexo</label>
+                          <select formControlName="sexo" class="form-control">
+                            <option value="Macho">Macho</option>
+                            <option value="Hembra">Hembra</option>
+                          </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                          <label>Edad</label>
+                          <input
+                            formControlName="edad"
+                            class="form-control"
+                            type="number"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Paso 3: Información de diagnóstico inicial -->
+            <div *ngSwitchCase="3">
+              <div class="card mb-3" style="max-width: 760px">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img
+                      src="./assets/img/perro5.webp"
+                      class="img-fluid rounded-start"
+                      alt="..."
+                    />
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5
+                        class="card-title text-white text-center p-2 d-flex justify-content-between align-items-center"
+                        style="background-color: #233791"
+                      >
+                        <span
+                          class="badge text-bg-light d-inline-flex justify-content-center align-items-center ms-2"
+                          style="
+                            border-radius: 50%;
+                            width: 20px;
+                            height: 20px;
+                            font-size: 0.7rem;
+                          "
+                        >
+                          3
+                        </span>
+                        <span class="flex-grow-1 text-center"
+                          >Información de diagnóstico inicial</span
+                        >
+                      </h5>
+
+                      <div class="mb-3">
+                        <label>Nombre</label>
+                        <input formControlName="nombre" class="form-control" />
+                      </div>
+
+                      <div class="mb-3">
+                        <label>Raza</label>
+                        <input formControlName="raza" class="form-control" />
+                      </div>
+
+                      <div class="row">
+                        <div class="col-md-6 mb-3">
+                          <label>Tipo</label>
+                          <input formControlName="tipo" class="form-control" />
+                        </div>
+                        <div class="col-md-6 mb-3">
+                          <label>Color</label>
+                          <input formControlName="color" class="form-control" />
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-md-6 mb-3">
+                          <label>Sexo</label>
+                          <select formControlName="sexo" class="form-control">
+                            <option value="Macho">Macho</option>
+                            <option value="Hembra">Hembra</option>
+                          </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                          <label>Edad</label>
+                          <input
+                            formControlName="edad"
+                            class="form-control"
+                            type="number"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer justify-content-between">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            (click)="previous()"
+            [disabled]="step === 1"
+          >
+            Anterior
+          </button>
+          <div>
+            <button
+              type="button"
+              class="btn btn-primary me-2"
+              (click)="next()"
+              *ngIf="step < totalSteps"
+            >
+              Siguiente
+            </button>
+            <button
+              type="submit"
+              class="btn btn-success"
+              *ngIf="step === totalSteps"
+              [disabled]="petForm.invalid"
+            >
+              Guardar
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
