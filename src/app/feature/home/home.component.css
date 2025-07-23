@@ -41,12 +41,12 @@
 .card-body {
   padding: 1.5rem;
   margin-top: 0.1rem;
-  /* color: var(--primary-text-color); Color del texto en la tarjeta */
+  color: var(--primary-text-color); 
 }
 
 .card {
-  height: 712px;
-  background-image: url('/assets/img/perro6.jpg');
+  height: auto;
+  /* background-image: url('/assets/img/perro6.jpg'); */
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain; /* imagen más pequeña y centrada */
