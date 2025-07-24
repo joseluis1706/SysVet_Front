@@ -6,8 +6,9 @@ import { SidebarComponent } from '../sidebar/sidebar.component';
 import { RouterModule, RouterOutlet } from '@angular/router';
 import { FooterComponent } from '../footer/footer.component';
 import { Application } from '../../model/application.model';
-import { ApplicationsService } from '../../services/applications/applications.service';
+
 import { DESCRIPTION_APP, NAME_APP_SHORT } from '../../../config/config';
+import { ApplicationsService } from '../../services/applications/applications.service';
 
 @Component({
   selector: 'app-layout',
@@ -61,8 +62,6 @@ export default class LayoutComponent implements OnInit {
       strRoles: [],
     };
 
-    console.log('Application fetched:', this.application);
-
     this.optionsMenu = [
       {
         id: '1',
@@ -87,48 +86,7 @@ export default class LayoutComponent implements OnInit {
         idApplication: "11124"
       }
     ];
-
-    // this.optionsMenu = this.application?.strRoles?.flatMap(rol =>
-    //   rol?.menuOptions?.map(menu => ({
-    //     id: menu?.id ?? '',
-    //     name: menu?.strName ?? 'Unnamed Menu',
-    //     description: menu?.strDescription ?? '',
-    //     url: menu?.strUrl ?? '#',
-    //     icon: menu?.strIcon ?? 'default-icon',
-    //     type: menu?.strType ?? 'main_menu',
-    //     idMPather: null,
-    //     order: menu?.ingOrder !== undefined && menu?.ingOrder !== null ? menu.ingOrder.toString() : '99',
-    //     idApplication: this.application?.id ?? '',
-    //   })) || []
-    // ) || [];
-
-    //   this.applicationsService.getApplicationByNameAndRol(name, userRol).subscribe(
-    //     (app) => {
-    //       if (!app) {
-    //         console.error('Aplicación no encontrada');
-    //         return;
-    //       }
-
-    //       this.application = app;
-
-    //       this.optionsMenu = this.application?.strRoles?.flatMap(rol =>
-    //         rol?.menuOptions?.map(menu => ({
-    //           id: menu?.id ?? '',
-    //           name: menu?.strName ?? 'Unnamed Menu',
-    //           description: menu?.strDescription ?? '',
-    //           url: menu?.strUrl ?? '#',
-    //           icon: menu?.strIcon ?? 'default-icon',
-    //           type: menu?.strType ?? 'main_menu',
-    //           idMPather: null,
-    //           order: menu?.ingOrder !== undefined && menu?.ingOrder !== null ? menu.ingOrder.toString() : '99',
-    //           idApplication: this.application?.id ?? '',
-    //         })) || []
-    //       ) || [];
-    //     },
-    //     (error) => {
-    //       console.error('Error fetching application:', error);
-    //     }
-    //   );
+    
   }
 
   loadSidebarPreference(): void {

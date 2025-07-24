@@ -4,11 +4,11 @@ import { HeaderComponent } from "./shared/components/header/header.component";
 import { HEADER_BACKGROUND_COLOR, HEADER_ICON_COLOR, NAME_APP_LONG, PRIMARY_ACTIVE_TEXT_COLOR, PRIMARY_BACKGROUND_COLOR, PRIMARY_TEXT_COLOR, SIDEBAR_BACKGROUND_COLOR } from './config/config';
 import { FooterComponent } from "./shared/components/footer/footer.component";
 import { SidebarComponent } from "./shared/components/sidebar/sidebar.component";
-import LayoutComponent from "./shared/components/layout/layout.component";
 import { LoginComponent } from './shared/components/login/login.component';
 import { isPlatformBrowser } from '@angular/common';
 import { OptionMenu } from './shared/model/option_menu';
 import { IdleTimeoutService } from './shared/services/idle-timeout.service';
+import LayoutComponent from './shared/components/layout/layout.component';
 
 @Component({
   selector: 'app-root',
